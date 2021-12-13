@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<jsp:useBean id="person" class="com.sist.vo.Person" 
+	scope="request"/>
+	<!---request : 다음 연결 되어진 문서까지 적용됨-->
+	<p>
+		아이디 : <%=person.getId() %>
+		이름 : <%=person.getName() %>
+	</p>
+	
+	<%
+		person.setId(202200001);	
+		person.setName("김유신");
+	%>
+	
+	<jsp:include page="useBeanTest3.jsp"/>
+</body>
+</html>
